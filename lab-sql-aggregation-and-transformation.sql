@@ -10,7 +10,8 @@ FROM
 -- 1.2. Express the average movie duration in hours and minutes. Don't use decimals.
 		-- Hint: Look for floor and round functions.
 SELECT 
-    FLOOR(AVG(length)) AS 'avg_duration'
+    FLOOR(AVG(length) / 60) AS hours,
+    ROUND(AVG(length) % 60) AS minutes
 FROM
     film;
 
